@@ -52,6 +52,9 @@ org.authenticate({ username: config.salesforce.username, password: config.salesf
 app.use(urlencodedParser);
 
 app.post('/listen', function(request, response){
+  // set the recordId that you want to post to in salesforce
+  var postToItemId;
+
   //should have a valid body
   if(!request.body) {
     response.sendStatus(400);
@@ -63,10 +66,12 @@ app.post('/listen', function(request, response){
   }
 
   //send to chatter
-  org.chatter.postFeedItem({id: '[recordId]', text: request.body.text}, function(err, resp) {
-    if (!err) console.log("response from chatter:", resp);
-    if (err) console.log("error from chatter:", err);
-  });
+  if(postToItemId) {
+    org.chatter.postFeedItem({id: postToItemId, text: request.body.text}, function(err, resp) {
+      if (!err) console.log("response from chatter:", resp);
+      if (err) console.log("error from chatter:", err);
+    });
+  }
   
   response.sendStatus(200);
 });
@@ -76,5 +81,5 @@ app.get('/oauth_callback', function(request, response){
 });
 
 
-console.log("Starting slatter server on port 8080");
-app.listen(8080);
+console.log("Starting slatter server on configured port");
+app.listen(config.post);

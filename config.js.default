@@ -34,6 +34,7 @@ Slatter.config.salesforce = {};
 
 Slatter.config.base_uri = '[YOUR NODEJS BASE URL]';
 Slatter.config.slacker.incoming_token = "[INCOMING TOKEN FROM SLACKER]";
+Slatter.config.port = 8080;
 
 Slatter.config.salesforce = {
   client_id: '',
