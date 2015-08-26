@@ -1,0 +1,18 @@
+var Slatter = Slatter || {};
+Slatter.config = Slatter.config || {};
+
+Slatter.config.slacker = {};
+Slatter.config.salesforce = {};
+
+Slatter.config.base_uri = '[YOUR NODEJS BASE URL]';
+Slatter.config.slacker.incoming_token = "[INCOMING TOKEN FROM SLACKER]";
+
+Slatter.config.salesforce = {
+  client_id: '',
+  client_secret: '',
+  username: '[Username for Salesforce org]',
+  password: '[Password WITH API security token]',
+  redirect_uri: Slatter.config.base_uri + '/oauth_callback'
+};
+
+module.exports = Slatter.config;

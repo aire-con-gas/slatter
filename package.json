@@ -1,0 +1,21 @@
+{
+  "name": "slatter",
+  "version": "0.0.1",
+  "description": "",
+  "main": "app.js",
+  "dependencies": {
+    "passport-oauth2": "^1.1.2",
+    "body-parser": "^1.13.3",
+    "passport": "^0.2.2",
+    "express": "^4.13.3"
+  },
+  "devDependencies": {
+    "nforce": "^1.2.1",
+    "nforce-chatter": "0.0.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "David Hong",
+  "license": "ISC"
+}
